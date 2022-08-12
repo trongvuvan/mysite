@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-11 11:14+0000\n"
+"POT-Creation-Date: 2022-08-12 05:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -146,7 +146,9 @@ msgstr "マイ ローカル ライブラリ ホーム"
 #: catalog/templates/index.html:6
 msgid ""
 "Welcome to LocalLibrary, a website developed by <em>Mozilla Developer Network"
-msgstr "Mozilla Developer Network によって開発された Web サイト、LocalLibrary へようこそ"
+msgstr ""
+"Mozilla Developer Network によって開発された Web サイト、LocalLibrary へよう"
+"こそ"
 
 #: catalog/templates/index.html:7
 msgid " Dynamic content"
@@ -168,10 +170,18 @@ msgstr "著者"
 msgid "Genres"
 msgstr "ジャンル"
 
-#: locallibrary/settings.py:132
+#: catalog/templates/index.html:16
+msgid "You have visited this page"
+msgstr "このウェブサイトにきた"
+
+#: catalog/templates/index.html:16
+msgid "times"
+msgstr "回"
+
+#: locallibrary/settings.py:130
 msgid "VietNamese"
 msgstr "ベトナム語"
 
-#: locallibrary/settings.py:133
+#: locallibrary/settings.py:131
 msgid "Japanese"
 msgstr "日本語"
