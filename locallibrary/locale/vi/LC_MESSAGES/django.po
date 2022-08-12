@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-11 11:14+0000\n"
+"POT-Creation-Date: 2022-08-12 05:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -170,11 +170,19 @@ msgstr "Tác giả"
 msgid "Genres"
 msgstr "Thể loại"
 
-#: locallibrary/settings.py:132
+#: catalog/templates/index.html:16
+msgid "You have visited this page"
+msgstr "Bạn đã tới trang web này"
+
+#: catalog/templates/index.html:16
+msgid "times"
+msgstr "Lần"
+
+#: locallibrary/settings.py:130
 msgid "VietNamese"
 msgstr ""
 
-#: locallibrary/settings.py:133
+#: locallibrary/settings.py:131
 msgid "Japanese"
 msgstr ""
 
