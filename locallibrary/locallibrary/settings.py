@@ -56,7 +56,7 @@ ROOT_URLCONF = 'locallibrary.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -136,5 +136,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.i18n', # this one
     'django.core.context_processors.request',
     'django.core.context_processors.static',
-    'django.contrib.messages.context_processors.messages',  
+    'django.contrib.messages.context_processors.messages', 
 )
+LOGIN_REDIRECT_URL = '/'

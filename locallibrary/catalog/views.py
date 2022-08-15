@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from django.views import generic
 from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import permission_required
 
 from .models import Book, Author, BookInstance, Genre
 
@@ -32,7 +35,7 @@ def index(request):
 class BookListView(generic.ListView):
     model = Book
     paginate_by = 2
-    
+ 
 class BookDetailView(generic.DetailView):
     model = Book
     def get_context_data(self, **kwargs):
@@ -51,3 +54,11 @@ class AuthorDetailView(generic.DetailView):
         context = super().get_context_data(**kwargs)
         context['author_book_list'] = Book.objects.all().filter(author=self.object)
         return context
+
+class LoanedBooksByUserListView(LoginRequiredMixin, generic.ListView):
+    model = BookInstance
+    template_name ='catalog/bookinstance_list_borrowed_user.html'
+    paginate_by = 2
+
+    def get_queryset(self):
+        return BookInstance.objects.filter(borrower=self.request.user, status__exact='o').order_by('due_back')
