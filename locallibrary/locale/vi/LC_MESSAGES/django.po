@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-12 07:45+0000\n"
+"POT-Creation-Date: 2022-08-15 08:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,29 +20,41 @@ msgstr ""
 "%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: catalog/models.py:8
+#: catalog/forms.py:9
+msgid "Enter a date between now and 4 weeks (default 3)."
+msgstr ""
+
+#: catalog/forms.py:15
+msgid "Invalid date - renewal in past"
+msgstr ""
+
+#: catalog/forms.py:18
+msgid "Invalid date - renewal more than 4 weeks ahead"
+msgstr ""
+
+#: catalog/models.py:9
 msgid "Enter a book genre (e.g. Science Fiction)"
 msgstr "Điền Loại sách"
 
-#: catalog/models.py:16
+#: catalog/models.py:17
 msgid "Enter a brief description of the book"
 msgstr "Thêm Mô tả cho sách"
 
-#: catalog/models.py:18
+#: catalog/models.py:19
 msgid ""
 "13 Character <a href=\"https://www.isbn-international.org/content/what-isbn"
 "\">ISBN number</a>"
 msgstr "Số ISBN"
 
-#: catalog/models.py:19
+#: catalog/models.py:20
 msgid "Select a genre for this book"
 msgstr "Chọn thẻ loại cho sách"
 
-#: catalog/models.py:33
+#: catalog/models.py:34
 msgid "Unique ID for this particular book across whole library"
 msgstr "Nhập ID duy nhất cho 1 sách của thể "
 
-#: catalog/models.py:50
+#: catalog/models.py:51
 msgid "Book availability"
 msgstr "Số lượng sách sẵn có"
 
@@ -62,37 +74,53 @@ msgstr "Tất cả sách"
 msgid "All authors"
 msgstr "Tất cả tác giả"
 
-#: catalog/templates/base_generic.html:24
-msgid "User"
-msgstr "Người dùng"
-
-#: catalog/templates/base_generic.html:25
+#: catalog/templates/base_generic.html:27
 msgid "My Borrowed"
 msgstr "Danh sách đã mượn của toi"
 
-#: catalog/templates/base_generic.html:26
+#: catalog/templates/base_generic.html:28
 msgid "Logout"
 msgstr "Đăng xuất"
 
-#: catalog/templates/base_generic.html:28
+#: catalog/templates/base_generic.html:30
 msgid "Login"
 msgstr "Đăng nhập"
 
-#: catalog/templates/base_generic.html:40
+#: catalog/templates/base_generic.html:37
+msgid "Staff"
+msgstr ""
+
+#: catalog/templates/base_generic.html:39
+#, fuzzy
+#| msgid "My Borrowed"
+msgid "All borrowed"
+msgstr "Danh sách đã mượn của toi"
+
+#: catalog/templates/base_generic.html:55
 msgid "previous"
 msgstr "Trước"
 
-#: catalog/templates/base_generic.html:43
+#: catalog/templates/base_generic.html:58
 msgid "Page"
 msgstr "Trang"
 
-#: catalog/templates/base_generic.html:43
+#: catalog/templates/base_generic.html:58
 msgid "of"
 msgstr "của"
 
-#: catalog/templates/base_generic.html:46
+#: catalog/templates/base_generic.html:61
 msgid "next"
 msgstr "sau"
+
+#: catalog/templates/catalog/author_confirm_delete.html:5
+#, fuzzy
+#| msgid "Author"
+msgid "Delete Author"
+msgstr "Tác giả"
+
+#: catalog/templates/catalog/author_confirm_delete.html:7
+msgid "Are you sure you want to delete the author"
+msgstr "Bạn có muốn xóa tác giả này không"
 
 #: catalog/templates/catalog/author_detail.html:5
 #: catalog/templates/catalog/book_detail.html:7
@@ -112,9 +140,17 @@ msgstr "Tổng quan sách"
 msgid "Author List"
 msgstr "Danh sách tác giả"
 
-#: catalog/templates/catalog/author_list.html:20
+#: catalog/templates/catalog/author_list.html:19
 msgid "There are no authors available."
 msgstr "Không có sách sẵn có"
+
+#: catalog/templates/catalog/book_confirm_delete.html:5
+msgid "Delete Book"
+msgstr "Xóa sách"
+
+#: catalog/templates/catalog/book_confirm_delete.html:7
+msgid "Are you sure you want to delete the book"
+msgstr "Bạn có muốn xóa sách này không"
 
 #: catalog/templates/catalog/book_detail.html:5
 msgid "Title"
@@ -157,15 +193,32 @@ msgstr "Danh sách sách"
 msgid " There are no books in the library"
 msgstr "Không có sách trong thư viện"
 
-#: catalog/templates/catalog/bookinstance_list_borrowed_user.html:4
-msgid "Borrowed books"
+#: catalog/templates/catalog/book_renew_librarian.html:4
+msgid "Renew"
+msgstr ""
+
+#: catalog/templates/catalog/book_renew_librarian.html:5
+#, fuzzy
+#| msgid "My Borrowed"
+msgid "Borrower"
+msgstr "Danh sách đã mượn của toi"
+
+#: catalog/templates/catalog/bookinstance_list_borrowed_all.html:4
+#, fuzzy
+#| msgid "Borrowed books"
+msgid "All Borrowed Books"
 msgstr "Sách đã mượn"
 
-#: catalog/templates/catalog/bookinstance_list_borrowed_user.html:16
+#: catalog/templates/catalog/bookinstance_list_borrowed_all.html:17
+#: catalog/templates/catalog/bookinstance_list_borrowed_user.html:15
 #, fuzzy
 #| msgid " There are no books in the library"
 msgid "There are no books borrowed."
 msgstr "Không có sách trong thư viện"
+
+#: catalog/templates/catalog/bookinstance_list_borrowed_user.html:4
+msgid "Borrowed books"
+msgstr "Sách đã mượn"
 
 #: catalog/templates/index.html:5
 msgid "My Local Library Home"
@@ -214,15 +267,15 @@ msgstr "Đăng Xuất"
 msgid "Click here to login again."
 msgstr "Ấn để đăng nhập lại"
 
-#: catalog/templates/registration/login.html:6
+#: catalog/templates/registration/login.html:5
 msgid "Your username and password didn't match. Please try again"
 msgstr "Tài khoản và mật khẩu không trùng,thử lại"
 
-#: catalog/templates/registration/login.html:14
+#: catalog/templates/registration/login.html:13
 msgid "Please login to see this page"
 msgstr "Đăng nhập để xem trang này"
 
-#: catalog/templates/registration/login.html:35
+#: catalog/templates/registration/login.html:33
 msgid "Lost password?"
 msgstr "Quên mật khẩu"
 
@@ -247,16 +300,17 @@ msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used. Please request a new password reset."
 msgstr ""
-"Liên kết đặt lại mật khẩu không hợp lệ, có thể vì nó đã bị"
-"đã sử dụng. Vui lòng yêu cầu đặt lại mật khẩu mới."
+"Liên kết đặt lại mật khẩu không hợp lệ, có thể vì nó đã bịđã sử dụng. Vui "
+"lòng yêu cầu đặt lại mật khẩu mới."
 
 #: catalog/templates/registration/password_reset_done.html:4
 msgid ""
 "We've emailed you instructions for setting your password. If they haven't "
 "arrived in a few minutes, check your spam folder"
 msgstr ""
-"Chúng tôi đã gửi cho bạn hướng dẫn đặt mật khẩu của bạn qua email. Nếu họ chưa gửi"
-"đến trong vài phút nữa, hãy kiểm tra thư mục spam của bạn"
+"Chúng tôi đã gửi cho bạn hướng dẫn đặt mật khẩu của bạn qua email. Nếu họ "
+"chưa gửiđến trong vài phút nữa, hãy kiểm tra thư mục spam của bạn"
+
 #: catalog/templates/registration/password_reset_email.html:3
 msgid "Someone asked for password reset for email"
 msgstr "Ai đó hỏi để reset mật khẩu"
@@ -272,6 +326,9 @@ msgstr ""
 #: locallibrary/settings.py:131
 msgid "Japanese"
 msgstr ""
+
+#~ msgid "User"
+#~ msgstr "Người dùng"
 
 #~ msgid "English"
 #~ msgstr "Tiếng anh"
