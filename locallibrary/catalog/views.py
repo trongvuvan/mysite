@@ -1,13 +1,13 @@
 import datetime
 
+from django.views import generic
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse,HttpResponseRedirect
 from django.views.generic import DetailView
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import permission_required,login_required, permission_required
 from django.urls import reverse,reverse_lazy
-from django.views.generic.edit import CreateView, UpdateView, DeleteView,generic
+from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from django.contrib.auth.mixins import PermissionRequiredMixin
 
 from catalog.models import Author
