@@ -138,4 +138,4 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.messages.context_processors.messages', 
 )
 LOGIN_REDIRECT_URL = '/'
-STATIC_ROOT = os.path.join(BASE_DIR. 'staticfiles')
+STATIC_ROOT = os.path.join( BASE_DIR,'staticfiles')
