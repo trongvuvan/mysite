@@ -1,8 +1,20 @@
 {% extends "base_generic.html" %}
 {% load i18n %}
+{% load static %}
 {% block content %}
-  <h1>{% trans "Book List" %}</h1>
-      {% if book_list %}
+
+<link rel="stylesheet" href="{% static 'css/styles.css' %}"> 
+    <div>
+        <h1><center>{% trans "Book List" %}</center></h1>
+    </div>
+
+    <form action="{% url 'book-search' %}" method="get">
+      <input name="book" type="text" placeholder="Search">
+      <button class="button" type="submit" >Search</button>
+    </form>
+
+    <div
+    {% if book_list %}
       <ul>
           {% for book in book_list %}
           <li>
@@ -10,7 +22,8 @@
           </li>
           {% endfor %}
       </ul>
-  {% else %}
+    {% else %}
       <p>{% trans " There are no books in the library" %}</p>
-  {% endif %}
+    {% endif %}
+    </div>
 {% endblock %}
